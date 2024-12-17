@@ -1,0 +1,128 @@
+:root {
+  --background-color: whitesmoke;
+  --text-color: #333;
+  --primary-font: "Onest", sans-serif;
+  --title-color: #0d698b;
+  --button-bg-color: #e34234;
+  --button-text-color: #f2f1e8;
+  --like-btn-bg-color: #249e57;
+  --like-btn-text-color: darkgreen;
+  --dislike-btn-bg-color: #c74a4a;
+  --dislike-btn-text-color: #910000;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 1rem;
+  font-family: var(--primary-font);
+}
+
+#appTitle {
+  margin: 0;
+  text-align: left;
+  display: block;
+  font-family: var(--primary-font);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 24px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: var(--title-color);
+}
+
+#genreForm,
+#playBtn {
+  display: block;
+
+  max-width: 66%;
+  margin-block-start: 4rem;
+  margin-block-end: 2rem;
+  text-align: left;
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 1.1;
+
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+
+  select {
+    font-family: inherit;
+    font-size: 20px;
+    width: 66%;
+    height: auto;
+    padding: 0.3em;
+    border-radius: 0.4rem;
+  }
+}
+
+#movieInfo {
+  width: 65%;
+  margin: 32px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#moviePoster,
+#movieText {
+  width: 50%;
+}
+
+img#moviePoster {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+#movieText {
+  color: #fefbea;
+  line-height: 1.25;
+}
+
+#movieTitle,
+#movieOverview {
+  padding: 32px;
+}
+
+#playBtn {
+  margin-top: 20px;
+  font-size: 25px;
+  padding: 0.5em 1.1em;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  cursor: pointer;
+}
+
+#likeOrDislikeBtns {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#likeBtn,
+#dislikeBtn {
+  padding: 15px 25px;
+  font-size: 25px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+#likeBtn {
+  background-color: var(--like-btn-bg-color);
+  color: var(--like-btn-text-color);
+}
+
+#dislikeBtn {
+  background-color: var(--dislike-btn-bg-color);
+  color: var(--dislike-btn-text-color);
+}
