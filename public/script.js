@@ -20,9 +20,24 @@ const getGenres = async () => {
   }
 };
 
-function getMovies() {
+const getMovies = async () => {
   const selectedGenre = getSelectedGenre();
-}
+  const discoverMovieEndpoint = "/discover/movie";
+  //A query string starts with a question mark, ?, and each key/value pair is separated by the & symbol.
+  const requestParams = `?api_key=${tmdbKey}&with_genres=${selectedGenre}`;
+  const urlToFetch = `${tmdbBaseUrl}${discoverMovieEndpoint}${requestParams}`;
+  try {
+    const response = await fetch(urlToFetch);
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      //console.log(jsonResponse);
+      const movies = jsonResponse.results;
+      return movies;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 const getMovieInfo = () => {};
 
