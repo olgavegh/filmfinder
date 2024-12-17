@@ -1,14 +1,20 @@
-const tmdbKey = "c0a39a6aa6ea3dc07aebe46b5d787030";
+const tmdbKey = "21200599411b3a89b248a6f116766817";
 const tmdbBaseUrl = "https://api.themoviedb.org/3";
 const playBtn = document.getElementById("playBtn");
 
 const getGenres = async () => {
-  const genreRequestEndpoint = "/genre/tv/list?language=en";
+  const genreRequestEndpoint = "/genre/tv/list";
+  // Query strings start out with a question mark
   const requestParams = `?api_key=${tmdbKey}`;
-
   const urlToFetch = `${tmdbBaseUrl}${genreRequestEndpoint}${requestParams}`;
-
   try {
+    const response = await fetch(urlToFetch);
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      //console.log(jsonResponse);
+      const genres = jsonResponse.genres;
+      return genres;
+    }
   } catch (error) {
     console.log(error);
   }

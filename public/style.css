@@ -53,7 +53,7 @@ body {
   select {
     font-family: inherit;
     font-size: 20px;
-    width: 66%;
+    width: fit-content;
     height: auto;
     padding: 0.3em;
     border-radius: 0.4rem;
