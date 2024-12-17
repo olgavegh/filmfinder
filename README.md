@@ -1,12 +1,12 @@
-# FilmFinder 🎬
+# MovieRoulette 🎬
 
-A personal movie discovery app to help me find random movie recommendations by genre using my **TMDB API key**.
+A personal movie recommendation app that gives you random movie suggestions by genre using my **TMDB API key**.
 
 ---
 
 ## Description 📌
 
-This project is for **personal use only**. It uses my TMDB API key and works exclusively with my settings.
+**MovieRoulette** is a simple and fun app for **personal use only**. Select a genre, spin the "roulette," and get a random movie recommendation. The app works exclusively with my personal TMDB API key.
 
 ---
 
@@ -18,3 +18,10 @@ This project is for **personal use only**. It uses my TMDB API key and works exc
 2.  **Run the Project**  
     Simply open the `index.html` file in a browser:  
     `open index.html`
+
+## Technologies Used 💻
+
+- HTML
+- CSS
+- JavaScript (async/await, API requests)
+- TMDB API

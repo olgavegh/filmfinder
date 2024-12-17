@@ -80,7 +80,7 @@ img#moviePoster {
 }
 
 #movieText {
-  color: #fefbea;
+  color: var(--text-color);
   line-height: 1.25;
 }
 

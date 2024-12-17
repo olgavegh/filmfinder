@@ -71,6 +71,14 @@ const createMovieOverview = (overview) => {
   return overviewParagraph;
 };
 
+const createMovieLink = (link) => {
+  const linkParagraph = document.createElement("p");
+  linkParagraph.setAttribute("id", "movieLink");
+  linkParagraph.innerHTML = link;
+
+  return linkParagraph;
+};
+
 // Returns a random movie from the first page of movies
 const getRandomMovie = (movies) => {
   const randomIndex = Math.floor(Math.random() * movies.length);
@@ -89,12 +97,13 @@ const displayMovie = (movieInfo) => {
   const moviePoster = createMoviePoster(movieInfo.poster_path);
   const titleHeader = createMovieTitle(movieInfo.title);
   const overviewText = createMovieOverview(movieInfo.overview);
+  const linkToHomeText = createMovieLink(movieInfo.homepage);
 
   // Append title, poster, and overview to page
   moviePosterDiv.appendChild(moviePoster);
   movieTextDiv.appendChild(titleHeader);
   movieTextDiv.appendChild(overviewText);
-
+  movieTextDiv.appendChild(linkToHomeText);
   showBtns();
   likeBtn.onclick = likeMovie;
   dislikeBtn.onclick = dislikeMovie;
