@@ -2,11 +2,21 @@ const tmdbKey = "c0a39a6aa6ea3dc07aebe46b5d787030";
 const tmdbBaseUrl = "https://api.themoviedb.org/3";
 const playBtn = document.getElementById("playBtn");
 
-const getGenres = () => {};
+const getGenres = async () => {
+  const genreRequestEndpoint = "/genre/tv/list?language=en";
+  const requestParams = `?api_key=${tmdbKey}`;
 
-const getMovies = () => {
-  const selectedGenre = getSelectedGenre();
+  const urlToFetch = `${tmdbBaseUrl}${genreRequestEndpoint}${requestParams}`;
+
+  try {
+  } catch (error) {
+    console.log(error);
+  }
 };
+
+function getMovies() {
+  const selectedGenre = getSelectedGenre();
+}
 
 const getMovieInfo = () => {};
 
