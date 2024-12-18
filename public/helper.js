@@ -17,10 +17,10 @@ const getSelectedGenre = () => {
 };
 
 // Displays the like and dislike buttons on the page
-const showBtns = () => {
-  console.log("showBtns");
+const showMovieContainer = () => {
   const nextBtn = document.getElementById("nextBtn");
-  nextBtn.style.display = "block";
+  const divMovie = document.getElementById("movieContainer");
+  divMovie.style.display = "flex";
 };
 
 // Clear the current movie from the screen
@@ -67,11 +67,12 @@ const createMovieOverview = (overview) => {
 };
 
 const createMovieLink = (link) => {
-  const linkParagraph = document.createElement("p");
-  linkParagraph.setAttribute("id", "movieLink");
-  linkParagraph.innerHTML = link;
-
-  return linkParagraph;
+  const linkButton = document.createElement("a");
+  linkButton.id = "movieLink";
+  linkButton.title = "Link to movie homepage";
+  linkButton.href = link;
+  linkButton.innerHTML = `<i class="fa-solid fa-square-arrow-up-right"></i>`;
+  return linkButton;
 };
 
 // Returns a random movie from the first page of movies
@@ -100,7 +101,6 @@ const displayMovie = (movieInfo) => {
   movieTextDiv.appendChild(overviewText);
   movieTextDiv.appendChild(linkToHomeText);
 
-  console.log("displayMovie");
-  showBtns();
+  showMovieContainer();
   nextBtn.onclick = nextMovie;
 };

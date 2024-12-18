@@ -1,9 +1,9 @@
-const tmdbKey = "21200599411b3a89b248a6f116766817";
+const tmdbKey = "e37acb7a11000f9b0c7c92ee45bbbaca";
 const tmdbBaseUrl = "https://api.themoviedb.org/3";
 const playBtn = document.getElementById("playBtn");
 
 const getGenres = async () => {
-  const genreRequestEndpoint = "/genre/tv/list";
+  const genreRequestEndpoint = "/genre/movie/list";
   // Query strings start out with a question mark
   const requestParams = `?api_key=${tmdbKey}`;
   const urlToFetch = `${tmdbBaseUrl}${genreRequestEndpoint}${requestParams}`;
@@ -35,12 +35,13 @@ const getMovies = async () => {
       return movies;
     }
   } catch (error) {
-    console.log(error);
+    alert(error);
   }
 };
 
-const getMovieInfo = async (movie) => {
-  const movieEndpoint = `/movie/${movie.id}`;
+const getMovieInfo = async (randomMovie) => {
+  const randomMovieId = randomMovie.id;
+  const movieEndpoint = `/movie/${randomMovieId}`;
   const requestParams = `?api_key=${tmdbKey}`;
   const urlToFetch = `${tmdbBaseUrl}${movieEndpoint}${requestParams}`;
   try {
@@ -63,10 +64,23 @@ const showRandomMovie = async () => {
     clearCurrentMovie();
   }
   const movies = await getMovies();
+  //console.log(movies);
   const randomMovie = getRandomMovie(movies);
   const info = await getMovieInfo(randomMovie);
+
+  setIntroHeader();
   displayMovie(info);
 };
 
 getGenres().then(populateGenreDropdown);
 playBtn.onclick = showRandomMovie;
+
+const setIntroHeader = () => {
+  const introElem = document.getElementById("intro");
+  introElem.style.flexDirection = "row";
+  introElem.style.height = "100%";
+  introElem.style.gap = "1rem";
+  introElem.style.transition = "all 0.5s ease-in-out";
+  const labelElem = document.getElementById("recommendationLabel");
+  labelElem.style.display = "none";
+};

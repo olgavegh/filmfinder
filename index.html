@@ -8,27 +8,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="public/style.css">
+    <link rel="stylesheet" href="public/style.css?1">
     <script defer src="https://kit.fontawesome.com/e918d10e90.js" crossorigin="anonymous"></script>
-    <script defer src="public/helper.js"></script>
-    <script defer src="public/script.js"></script>
+    <script defer src="public/helper.js?1"></script>
+    <script defer src="public/script.js?1"></script>
 </head>
 
 <body>
-    <header>
-        <h1 id="appTitle">Film Finder</h1>
-    </header>
-    <form id="genreForm">
-        <label>Get recommendations for what to watch next</label>
-        <select name="genres" id="genres" title="Choose a genre">
-        </select>
-    </form>
-    <button id="playBtn">Let's Play!</button>
-    <div id="movieInfo">
-        <div id="moviePoster"></div>
-        <div id="movieText"></div>
+    <div id="intro">
+        <header>
+            <h1 id="appTitle">Film Finder</h1>
+        </header>
+        <form id="genreForm">
+            <label id="recommendationLabel">Get recommendations for what to watch next</label>
+            <div id="genreFormContainer">
+                <select name="genres" id="genres" title="Choose a genre">
+                </select>
+                <button id="playBtn">Let's Roll!</button>
+            </div>
+        </form>
     </div>
-    <button id="nextBtn" title="Next"><i class="fa-solid fa-thumbs-up"></i></button>
+
+    <div id="movieContainer">
+        <div id="movieInfo">
+            <div id="moviePoster"></div>
+            <div id="movieText"></div>
+
+        </div>
+        <button id="nextBtn" title="Next"><i class="fa-solid fa-thumbs-up"></i></button>
+    </div>
 
 </body>
 
