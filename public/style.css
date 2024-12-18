@@ -100,29 +100,15 @@ img#moviePoster {
   cursor: pointer;
 }
 
-#likeOrDislikeBtns {
-  text-align: center;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
+#nextBtn {
+  display: none;
 
-#likeBtn,
-#dislikeBtn {
   padding: 15px 25px;
   font-size: 25px;
   border-radius: 12px;
   border: none;
   cursor: pointer;
-}
 
-#likeBtn {
   background-color: var(--like-btn-bg-color);
   color: var(--like-btn-text-color);
-}
-
-#dislikeBtn {
-  background-color: var(--dislike-btn-bg-color);
-  color: var(--dislike-btn-text-color);
 }

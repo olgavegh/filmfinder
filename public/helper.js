@@ -18,8 +18,9 @@ const getSelectedGenre = () => {
 
 // Displays the like and dislike buttons on the page
 const showBtns = () => {
-  const btnDiv = document.getElementById("likeOrDislikeBtns");
-  btnDiv.removeAttribute("hidden");
+  console.log("showBtns");
+  const nextBtn = document.getElementById("nextBtn");
+  nextBtn.style.display = "block";
 };
 
 // Clear the current movie from the screen
@@ -31,13 +32,7 @@ const clearCurrentMovie = () => {
 };
 
 // After liking a movie, clears the current movie from the screen and gets another random movie
-const likeMovie = () => {
-  clearCurrentMovie();
-  showRandomMovie();
-};
-
-// After disliking a movie, clears the current movie from the screen and gets another random movie
-const dislikeMovie = () => {
+const nextMovie = () => {
   clearCurrentMovie();
   showRandomMovie();
 };
@@ -104,7 +99,8 @@ const displayMovie = (movieInfo) => {
   movieTextDiv.appendChild(titleHeader);
   movieTextDiv.appendChild(overviewText);
   movieTextDiv.appendChild(linkToHomeText);
+
+  console.log("displayMovie");
   showBtns();
-  likeBtn.onclick = likeMovie;
-  dislikeBtn.onclick = dislikeMovie;
+  nextBtn.onclick = nextMovie;
 };
